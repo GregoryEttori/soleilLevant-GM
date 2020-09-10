@@ -15,8 +15,6 @@ body {
   margin: 50px
 }
 
-
-
 #app {
   display: flex;
   font-family: Inter, sans-serif;
@@ -24,4 +22,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #FF4040;
 }
+
 </style>

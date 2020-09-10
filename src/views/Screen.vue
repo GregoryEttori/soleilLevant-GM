@@ -26,8 +26,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  body{
-    background: red;
+  div{
+    background: black;
+    margin: -50px;
 
   }
   .screen{

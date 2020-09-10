@@ -1,7 +1,7 @@
 <template>
   <div class="GMPanel">
     <div class="leftPart">
-      <h1>Soleil Levant</h1>
+      <div class="leftPart__title">Soleil Levant</div>
       <CountDown/>
       <hintArea></hintArea>
     </div>
@@ -56,6 +56,14 @@ h1 {
 .leftPart {
   display: flex;
   flex-direction: column;
+
+  &__title{
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 58px;
+
+    color: #FF4040;
+  }
 }
 
 .hintDisplay {

@@ -1,59 +1,88 @@
 <template>
-<div>
-  <h1>Salle 2</h1>
-  <div class="hintControls">
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 1 </div>
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 2 </div>
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 3 </div>
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 4 </div>
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 5 </div>
-    <div class="hintControlsStyle" @click="openMecanism" > Enigme 6 </div>
+  <div>
+    <h1>Salle 2</h1>
+    <div class="RoomMecanismControls">
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 1</div>
+        <switches v-model="enable1" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 2</div>
+        <switches v-model="enable2" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 3</div>
+        <switches v-model="enable3" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 4</div>
+        <switches v-model="enable4" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 5</div>
+        <switches v-model="enable5" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 6</div>
+        <switches v-model="enable6" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 7</div>
+        <switches v-model="enable7" type-bold="true"></switches>
+      </div>
+
+      <div class="RoomMecanismControls__openAndClosed">
+        <div class="RoomMecanismControls__title">ENIGME 8</div>
+        <switches v-model="enable8" type-bold="true"></switches>
+      </div>
+
+    </div>
   </div>
-</div>
 </template>
 
 <script>
+import Switches from 'vue-switches';
+
 export default {
-  name: "Room2Mecanisms.vue",
+  name: "Room1Mecanisms.vue",
+  data(){
+    return{
+      enable1: false,
+      enable2: false,
+      enable3: false,
+      enable4: false,
+      enable5: true,
+      enable6: true,
+      enable7: true,
+      enable8: true,
+    }
+  },
+  components: {
+    Switches,
+  },
+  computed: {
+    firstValue(){
+      return this.enable1;
+    },
+    secondValue(){
+      return this.enable2;
+    }
+  },
   methods: {
     openMecanism(){
       console.log("Mecanism is open !");
-    }
+    },
+
   }
 }
 </script>
 
 <style lang="scss">
-.hintControls {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.hintControlsStyle {
-  display: flex;
-  color: #FF4040;
-  width: 96px;
-  height: 96px;
-  border: 2px solid #FF4040;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  margin: 12px 37px 12px 37px;
-
-  &:hover {
-    background: #FF4040;
-    color: #e5e5e5;
-    outline: none;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-}
 </style>
