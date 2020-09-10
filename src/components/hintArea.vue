@@ -3,15 +3,19 @@
     <textarea name="hint" id="hint" cols="30" rows="10" v-model="hintTextArea" placeholder="Rentrez un indice..."></textarea>
     <div class="hintArea__controls">
       <div class="controlsStyle hintArea__submit" @click="sendHint(hintTextArea)"> Envoyez </div>
-      <div class="controlsStyle hintArea__clear" @click="sendHint('')"> Clear </div>
+      <div class="controlsStyle hintArea__clear" @click="clearHint()"> Clear </div>
     </div>
 
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import {Howl} from 'howler';
 
-import { mapActions } from 'vuex';
+let sound = new Howl({
+  src: [require("../../sounds/hintSound.mp3")],
+});
 
 export default {
 name: "hintArea.vue",
@@ -21,9 +25,18 @@ name: "hintArea.vue",
     }
   },
   methods: {
-    ...mapActions([
-      'sendHint'
-    ]),
+    sendHint(){
+      sound.play();
+      axios.post('http://localhost:3000/newhint', this.hintTextArea )
+          .then(response => console.log(response))
+          .catch(error => console.log(error));
+    },
+    clearHint(){
+      axios.post('http://localhost:3000/clear')
+          .then(response => console.log(response))
+          .catch(error => console.log(error));
+      this.hintTextArea = "";
+    }
   }
 }
 

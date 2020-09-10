@@ -14,7 +14,8 @@ export default new Vuex.Store({
         sendHint: (state, payload)=> state.hintText = payload
     },
     actions:{
-        sendHint: (context, payload) => context.commit('sendHint', payload)
+        sendHint: (context, payload) => context.commit('sendHint', payload),
+
     }
 })
 

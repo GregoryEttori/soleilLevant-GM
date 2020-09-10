@@ -4,7 +4,6 @@
       <h1>Soleil Levant</h1>
       <CountDown/>
       <hintArea></hintArea>
-      <Screen></Screen>
     </div>
 
     <div class="separatorLine"></div>
@@ -25,12 +24,10 @@ import CountDown from "@/components/CountDown";
 import hintArea from "@/components/hintArea";
 import Room1Mecanisms from "@/components/Room1Mecanisms";
 import Room2Mecanisms from "@/components/Room2Mecanisms";
-import Screen from  '@/views/Screen'
 
 export default {
   name: "GMPanel",
   components: {
-    Screen,
     CountDown,
     hintArea,
     Room1Mecanisms,

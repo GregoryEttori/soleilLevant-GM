@@ -1,31 +1,42 @@
 <template>
-  <div>
-    <h1>Ceci est le screen</h1>
-    <p>ceci est le state : {{ hint }}</p>
+  <div class="screen">
+    <h1>{{ message }}</h1>
   </div>
-
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import axios from "axios";
 
 export default {
-  name: "Screen.vue",
-  computed:{
-    ...mapGetters([
-        'hintText'
-    ]),
-    hint(){
-      console.log('hint');
-      return this.$store.getters.hintText
+  name: "Screen",
+  data() {
+    return {
+      message: null,
     }
+  },
+  methods: {
+    getHints() {
+      axios.get('http://localhost:3000').then(response => this.message = response.data);
+    }
+  },
+  mounted() {
+    setInterval(() => this.getHints(), 1000);
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   body{
-    background: black;
+    background: red;
+
+  }
+  .screen{
+    width: 1080px;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     text-align: center;
   }
 </style>
