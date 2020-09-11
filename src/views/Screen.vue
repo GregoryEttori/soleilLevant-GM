@@ -1,6 +1,6 @@
 <template>
   <div class="screen">
-    <h1>{{ message }}</h1>
+    <div class="screen__title">{{ message }}</div>
   </div>
 </template>
 
@@ -32,12 +32,23 @@ export default {
 
   }
   .screen{
-    width: 1080px;
-    height: 720px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    padding: 50px;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    text-align: center;
+
+    &__title{
+      font-style: normal;
+      font-weight: 900;
+      font-size: 80px;
+      line-height: 90px;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      color: #FF4040;
+    }
+
   }
 </style>

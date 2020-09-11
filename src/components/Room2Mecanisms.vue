@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Salle 2</h1>
+    <div class="RoomTitle">Salle 2</div>
     <div class="RoomMecanismControls">
       <div class="RoomMecanismControls__openAndClosed">
         <div class="RoomMecanismControls__title">ENIGME 1</div>

@@ -1,4 +1,5 @@
 # soleil-levant
+Interface de GameMaster
 
 ## Project setup
 ```

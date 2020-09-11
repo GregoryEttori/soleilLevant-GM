@@ -1,22 +1,20 @@
 <template>
-  <div class="GMPanel">
-    <div class="leftPart">
-      <div class="leftPart__title">Soleil Levant</div>
-      <CountDown/>
-      <hintArea></hintArea>
-    </div>
+    <div class="GMPanel">
+      <div class="leftPart">
+        <div class="leftPart__title">Soleil Levant</div>
+        <CountDown/>
+        <hintArea></hintArea>
+      </div>
 
-    <div class="separatorLine"></div>
+      <div class="separatorLine"></div>
 
-    <div class="rightPart">
-      <div class="hintDisplay">
-        <Room1Mecanisms></Room1Mecanisms>
-        <Room2Mecanisms></Room2Mecanisms>
+      <div class="rightPart">
+        <div class="hintDisplay">
+          <Room1Mecanisms></Room1Mecanisms>
+          <Room2Mecanisms></Room2Mecanisms>
+        </div>
       </div>
     </div>
-  </div>
-
-
 </template>
 
 <script>
@@ -31,7 +29,7 @@ export default {
     CountDown,
     hintArea,
     Room1Mecanisms,
-    Room2Mecanisms
+    Room2Mecanisms,
   }
 }
 </script>

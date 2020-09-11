@@ -3,14 +3,14 @@
   <div class="RoomMecanismControls__entranceAndExit">
     <div class="RoomMecanismControls__entranceControls">
       <div class="RoomMecanismControls__entranceControls--title">ENTRÉE</div>
-      <switches v-model="entrance" type-bold="true"></switches>
+      <switches v-model="entrance" type-bold="true" ></switches>
     </div>
     <div class="RoomMecanismControls__exitControls">
       <div class="RoomMecanismControls__exitControls--title">SORTIE</div>
       <switches v-model="exit" type-bold="true"></switches>
     </div>
   </div>
-  <h1>Salle 1</h1>
+  <div class="RoomTitle">Salle 1</div>
   <div class="RoomMecanismControls">
     <div class="RoomMecanismControls__openAndClosed">
       <div class="RoomMecanismControls__title">ENIGME 1</div>
@@ -96,6 +96,17 @@ name: "Room1Mecanisms.vue",
 </script>
 
 <style lang="scss">
+.RoomTitle {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 20px 0;
+  color: #FF4040;
+}
+
 .RoomMecanismControls {
   display: flex;
   flex-wrap: wrap;
@@ -117,6 +128,7 @@ name: "Room1Mecanisms.vue",
   &__entranceAndExit{
     display: flex;
     justify-content: flex-end;
+    margin: 0 0 -20px 0;
   }
 
   &__entranceControls{
@@ -224,19 +236,40 @@ name: "Room1Mecanisms.vue",
 
 .vue-switcher--bold div {
   top: -8px;
-  height: 33px;
+  height: 34px;
   width: 87px; }
+.vue-switcher--bold div:before {
+  content: 'OPEN';
+  color: #00AB30;
+  position: absolute;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  left: 11px;
+  transition: linear .3s, background-color linear .3s;
+}
 .vue-switcher--bold div:after {
-  //content: 'OPEN';
   margin-left: -24px;
-  top: 4px;
+  top: 5px;
+}
+.vue-switcher--bold--unchecked div:before {
+  content: 'CLOSED';
+  color: #FF4040;
+  position: absolute;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  left: 29px;
+  transition: linear .3s, background-color linear .3s;
 }
 .vue-switcher--bold--unchecked div:after {
-  //content: 'CLOSED';
   left: 28px;
 }
 
 .vue-switcher-theme--default.vue-switcher-color--default div {
+  background-color: rgba(159, 86, 86, 0);
   border: 2px solid #00AB30;
   box-sizing: border-box;
   box-shadow: inset -2px 1px 4px rgba(0, 0, 0, 0.5);
@@ -250,6 +283,7 @@ name: "Room1Mecanisms.vue",
   box-sizing: border-box;
   border-radius: 29px;}
 .vue-switcher-theme--default.vue-switcher-color--default.vue-switcher--unchecked div {
+  background-color: rgba(159, 86, 86, 0);
   border: 2px solid #FF4040;
   box-sizing: border-box;
   border-radius: 29px;
